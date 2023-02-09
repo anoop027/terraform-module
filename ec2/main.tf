@@ -1,4 +1,4 @@
-resource "aws_instance" "server3" {
+resource "aws_instance" "server4" {
   ami                         = var.amiid
   instance_type               = var.type
   subnet_id                   = var.subnetid
@@ -7,14 +7,14 @@ resource "aws_instance" "server3" {
   key_name                    = "mykeytf"
 
   tags = {
-    Name = "tfserver7"
+    Name = "tfserver8"
   }
 
   connection {
     type     = "ssh"
     user     = "ubuntu"
     private_key = file("/home/ubuntu/terraform2/mykeytf.pem")
-    host     = aws_instance.server3.public_ip
+    host     = aws_instance.server4.public_ip
   }
 
   provisioner "file" {
