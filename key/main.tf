@@ -9,7 +9,7 @@ resource "aws_key_pair" "generated_key" {
   provisioner "local-exec" {
     command = <<-EOT
       echo '${tls_private_key.pk.private_key_pem}' > ./mykeytf.pem
-      chmod 400 ./mykeytf.pem
+      chmod 444 ./mykeytf.pem
     EOT
   }
 }
